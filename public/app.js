@@ -18,10 +18,6 @@ $(document).on("click", "p", function() {
   // Now make an ajax call for the Article
   $.ajax({
     method: "GET",
-    url: "/scrape/"
-  })
-  $.ajax({
-    method: "GET",
     url: "/articles/" + thisId
   })
     // With that done, add the note information to the page
