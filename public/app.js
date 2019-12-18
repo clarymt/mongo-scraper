@@ -37,7 +37,7 @@ $(document).on("click", "p", function () {
     .then(function (data) {
       console.log(data);
       // The title of the article
-      $("#notes").append("<h4>" + data.title + "</h4>");
+      $("#notes").append("<h4 >" + data.title + "</h4>");
       // A textarea to add a new note body
       $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
@@ -80,7 +80,26 @@ $(document).on("click", "#savenote", function () {
   $("#bodyinput").val("");
 });
 
+$.getJSON("/articlenotes", function (data) {
+  // For each one
+  for (var i = 0; i < data.length; i++) {
+    // Display the apropos information on the page
+    //  $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    $("#articlenotes").append(`
+    <div class="card">
+  <h3 class="card-header">
+    <p>${data[i].title}</>
+  </h3>
+  <div class="card-body">
+    <h5 class="card-title">${data[i].title}</h5>
+    <p data-id="${data[i].body}">Add Note</p>
+  </div>
+</div>
 
+<br>
+    `)
+  }
+});
 
 
 /*function handleArticleSave() {
@@ -100,7 +119,7 @@ $(document).on("click", "#savenote", function () {
   // Using a patch method to be semantic since this is an update to an existing record in our collection
   $.ajax({
     method: "PUT",
-    url: "/api/headlines/" + articleToSave._id,
+    url: "/articlenotes" + articleToSave._id,
     data: articleToSave
   }).then(function(data) {
     // If the data was saved successfully
