@@ -144,7 +144,8 @@ app.get("/articlenotes", function (req, res) {
       return db.dbNote.findAll({ _id: req.params.id }, { note: dbNote._id }, { new: false });
     })*/
     .then(function (dbNote) {
-      // If we were able to successfully update an Article, send it back to the client
+          console.log(dbNote);
+// If we were able to successfully update an Article, send it back to the client
       res.json(dbNote);
     })
     .catch(function (err) {

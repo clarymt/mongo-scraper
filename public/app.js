@@ -48,6 +48,7 @@ $(document).on("click", "p", function () {
       if (data.note) {
         // Place the body of the note in the body textarea
         $("#bodyinput").val(data.note.body);
+        $("#articlenotes").val();
       }
     });
 });
@@ -91,8 +92,7 @@ $.getJSON("/articlenotes", function (data) {
     <p>${data[i].title}</>
   </h3>
   <div class="card-body">
-    <h5 class="card-title">${data[i].title}</h5>
-    <p data-id="${data[i].body}">Add Note</p>
+    <p data-id="${data[i]._id}">${data[i].body}</p>
   </div>
 </div>
 
