@@ -37,12 +37,18 @@ $(document).on("click", "p", function () {
     .then(function (data) {
       console.log(data);
       // The title of the article
-      $("#notes").append("<h4 >" + data.title + "</h4>");
+      $("#notes").append(`
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h4 class="card-title">  ${data.title}  </h4>
+          <input class="card-text form-control" id='bodyinput' name='body'></input>
+          <br>
+          <button class='btn btn-danger' data-title='" + data.title + "' data-id='" + data._id + "' id='savenote'>Save Note</button>
+        </div>
+      </div>
+        `);
       // A textarea to add a new note body
-      $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
-      $("#notes").append("<br>");
-      $("#notes").append("<button class='btn btn-danger' data-title='" + data.title + "' data-id='" + data._id + "' id='savenote'>Save Note</button>");
 
       // If there's a note in the article
       if (data.note) {
