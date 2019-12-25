@@ -3,39 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel = "stylesheet" type = "text/css" href = "index.css"/>
+
     <title>Scraping With Mongoose</title>
-    <style>
-      body { background: url("https://designwoop.com/uploads/2012/03/01_free_subtle_textures_apple_ios_linen_texture.jpg") }
-      #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
-      }
-      #articles {
-        display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
-      }
-      #notes {
-        float: right;
-        width: 30%;
-      }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: #FCF5C7;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
-    </style>
+    
   </head>
   <body>
     
@@ -47,10 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Saved Articles</a>
+              <a class="nav-link" href="/articlenotes.html">Articles with Notes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/scrape">Scrape New Articles</a>
@@ -64,7 +35,8 @@
       </nav>
     <div class="container" id="wrapper">
       <div class="row">
-        <div class="col-12" id="articlenotes"></div>
+        <div class="col-12" id="articlenotes">
+        </div>
       </div>
     </div>
 
