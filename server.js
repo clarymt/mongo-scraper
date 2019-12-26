@@ -153,11 +153,11 @@ app.get("/articlenotes", function (req, res) {
       res.json(err);
     });
 });
-// Route for getting all Articles from the db
-app.get("/cleararticles", function (req, res) {
+// Route for getting all Articles CLEAR FROM the db
+/*app.get("/cleararticles", function (req, res) {
   // Grab every document in the Articles collection
   db.Article.clear()
-});
+});*/
 
 
 // Start the server
