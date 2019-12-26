@@ -20,6 +20,9 @@ $.getJSON("/articles", function (data) {
   }
 });
 
+app.get("/", function(req, res) {
+  res.json(path.join(__dirname, "public/index.html"));
+});
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function () {
