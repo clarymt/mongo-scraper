@@ -44,7 +44,7 @@ $(document).on("click", "p", function () {
           <h4 class="card-title">  ${data.title}  </h4>
           <input class="card-text form-control" id='bodyinput' name='body'></input>
           <br>
-          <button class='btn btn-danger' data-title='" + data.title + "' data-id='" + data._id + "' id='savenote'>Save Note</button>
+            <button class='btn btn-danger' data-title=' ${data.title} ' data-id='" + data._id + "' id='savenote'>Save Note</button>
         </div>
       </div>
         `);
@@ -96,7 +96,7 @@ $.getJSON("/articlenotes", function (data) {
     $("#articlenotes").append(`
     <div class="card">
   <h3 class="card-header">
-    <p>${data[i].title}</>
+    <p>${data[i].title}</p>
   </h3>
   <div class="card-body">
     <p data-id="${data[i]._id}">${data[i].body}</p>
